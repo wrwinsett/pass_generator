@@ -24,7 +24,9 @@ public class Main {
 		System.out.println("What was the number of your childhood home?");
 		String houseNumber = houseNumb.nextLine();
 		
-		String newPass = combine(favoriteNumber, favoriteSong, houseNumber, childhoodPet);
+		String combined = combine(favoriteNumber, favoriteSong, houseNumber, childhoodPet);
+		
+		String newPass = combined.replace('o', '0');
 		
 		System.out.println(newPass);
 		
