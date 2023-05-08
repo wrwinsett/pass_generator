@@ -27,8 +27,7 @@ public class Main {
 		String houseNumber = houseNumb.nextLine();
 		
 		String combined = combine(favoriteNumber, favoriteSong, houseNumber, childhoodPet);
-		
-		String newPass = combined.replace('o', '0');
+		String newPass = strengthenPassword (combined);
 		
 		System.out.println(newPass);
 		
@@ -39,5 +38,14 @@ public class Main {
 	    Collections.shuffle(strings);
 	    return String.join(".", strings);
 	}
+	
+	 public static String strengthenPassword(String password) {
+	        String strongPassword = password.replace('o', '0')
+	                .replace('e', '3')
+	                .replace('a', '@')
+	                .replace('s', '$');
+
+	        return strongPassword;
+	    }
 }
 
