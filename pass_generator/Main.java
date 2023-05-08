@@ -37,7 +37,7 @@ public class Main {
 	public static String combine(String s1, String s2, String s3, String s4) {
 	    List<String> strings = Arrays.asList(s1, s2, s3, s4);
 	    Collections.shuffle(strings);
-	    return String.join("", strings);
+	    return String.join(".", strings);
 	}
 }
 
