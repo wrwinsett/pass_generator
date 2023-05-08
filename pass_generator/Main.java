@@ -1,6 +1,8 @@
 package pass_generator;
 
-import java.util.Random;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -33,21 +35,9 @@ public class Main {
 	}
 	
 	public static String combine(String s1, String s2, String s3, String s4) {
-		Random passChoice = new Random();
-		int pick = passChoice.nextInt(5);
-		
-		switch(pick) {
-		case 0:
-			return s1 + s2 + s4 + s3;
-		case 1:
-			return s3 + s2 + s1;
-		case 2:
-			return s3 + "." + s2 + s1;
-		case 3:
-			return s3 + s4 + s2 +s1;
-		default:
-			return s1 + "." + s2 + "." + s3 + "!";
-		}
+	    List<String> strings = Arrays.asList(s1, s2, s3, s4);
+	    Collections.shuffle(strings);
+	    return String.join("", strings);
 	}
-
 }
+
