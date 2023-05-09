@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Main {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner favSong = new Scanner(System.in);
 		System.out.println("What was your favorite song last month?" );
