@@ -1,5 +1,7 @@
 package pass_generator;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -31,6 +33,7 @@ public class Main {
 		String newPass = strengthenPassword (combined);
 		
 		System.out.println(newPass);
+		saveToFile(newPass);
 		
 	}
 	
@@ -48,5 +51,26 @@ public class Main {
 
 	        return strongPassword;
 	    }
+	 @SuppressWarnings("resource")
+	 public static void saveToFile(String password) {
+	 	Scanner savePass = new Scanner(System.in);
+	 	System.out.println("Do you want to save your new password to a file? (y/n)");
+	 	String choice = savePass.nextLine();
+
+	 	if (choice.equalsIgnoreCase("y")) {
+	 		System.out.println("Enter the file name:");
+	 		String fileName = savePass.nextLine();
+
+	 		try {
+	 			FileWriter myWriter = new FileWriter(fileName + ".txt");
+	 			myWriter.write(password);
+	 			myWriter.close();
+	 			System.out.println("Your password has been saved to " + fileName + ".txt");
+	 		} catch (IOException e) {
+	 			System.out.println("An error occurred.");
+	 			e.printStackTrace();
+	 		}
+	 	}
+	 }
 }
 
