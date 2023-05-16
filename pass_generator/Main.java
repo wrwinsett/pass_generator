@@ -2,9 +2,6 @@ package pass_generator;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +17,9 @@ public class Main {
 	        String houseNumber = userInputs[3];
 
 		
-		String combined = combine(favoriteNumber, favoriteSong, houseNumber, childhoodPet);
+		Combine combine = new Combine();
+			String combined = Combine.combine(favoriteNumber, favoriteSong, houseNumber, childhoodPet);
+			
 		String newPass = strengthenPassword (combined);
 		
 		System.out.println(newPass);
@@ -28,11 +27,7 @@ public class Main {
 		
 	}
 	
-	public static String combine(String s1, String s2, String s3, String s4) {
-	    List<String> strings = Arrays.asList(s1, s2, s3, s4);
-	    Collections.shuffle(strings);
-	    return String.join(".", strings);
-	}
+	
 	
 	 public static String strengthenPassword(String password) {
 	        String strongPassword = password.replace('o', '0')

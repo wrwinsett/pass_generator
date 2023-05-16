@@ -14,12 +14,8 @@ public class AskPassQuestions {
         String[] inputs = new String[4];
 
         System.out.println("What was your favorite song last month?");
-        try {
-			inputs[0] = scanner.nextLine();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        inputs[0] = scanner.nextLine();
+		
 
         System.out.println("Who was your childhood pet?");
         inputs[1] = scanner.nextLine();
