@@ -11,23 +11,14 @@ public class Main {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		Scanner favSong = new Scanner(System.in);
-		System.out.println("What was your favorite song last month?" );
-		String favoriteSong = favSong.nextLine();
-		//code asks user for input, turns that input with a string
-		
-		Scanner oldPet = new Scanner(System.in);
-		System.out.println("Who was your childhood pet?" );
-		String childhoodPet = oldPet.nextLine();
-		//code asks user for input, turns that input with a string
-		
-		Scanner favNumb = new Scanner(System.in);
-		System.out.println("What is your favorite number?");
-		String favoriteNumber = favNumb.nextLine();
-		
-		Scanner houseNumb = new Scanner(System.in);
-		System.out.println("What was the number of your childhood home?");
-		String houseNumber = houseNumb.nextLine();
+		 AskPassQuestions askPassQuestions = new AskPassQuestions();
+	        String[] userInputs = AskPassQuestions.readUserInputs();
+
+	        String favoriteSong = userInputs[0];
+	        String childhoodPet = userInputs[1];
+	        String favoriteNumber = userInputs[2];
+	        String houseNumber = userInputs[3];
+
 		
 		String combined = combine(favoriteNumber, favoriteSong, houseNumber, childhoodPet);
 		String newPass = strengthenPassword (combined);
